@@ -8,4 +8,4 @@ change the unsolved_board variable to input a new sudoku board
 
 ## references 
 stack overflow
-Jack tech - https://youtube.com/@JackHeTech
+Jack tech
