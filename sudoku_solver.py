@@ -21,6 +21,11 @@ class board:
                 if j == 8:
                     print()
 
+    def insert_unsolved_board(self, lst):
+        for i in range(9):
+            for j in range(9):
+                self.board[i][j] = lst[i][j]
+
     def insert_num(self, row, col, num):
         self.board[row][col] = num
         self.filled_squares += 1
@@ -75,36 +80,17 @@ def solve_sudoku(board):
 def main():
     new_board = board()
     new_board.init_board()
-    new_board.insert_num(0,0,5)
-    new_board.insert_num(0,1,3)
-    new_board.insert_num(0,4,7)
-    new_board.insert_num(1,0,6)
-    new_board.insert_num(1,3,1)
-    new_board.insert_num(1,4,9)
-    new_board.insert_num(1,5,5)
-    new_board.insert_num(2,1,9)
-    new_board.insert_num(2,2,8)
-    new_board.insert_num(2,7,6)
-    new_board.insert_num(3,0,8)
-    new_board.insert_num(3,4,6)
-    new_board.insert_num(3,8,3)
-    new_board.insert_num(4,0,4)
-    new_board.insert_num(4,3,8)
-    new_board.insert_num(4,5,3)
-    new_board.insert_num(4,8,1)
-    new_board.insert_num(5,0,7)
-    new_board.insert_num(5,4,2)
-    new_board.insert_num(5,8,6)
-    new_board.insert_num(6,1,6)
-    new_board.insert_num(6,6,2)
-    new_board.insert_num(6,7,8)
-    new_board.insert_num(7,3,4)
-    new_board.insert_num(7,4,1)
-    new_board.insert_num(7,5,9)
-    new_board.insert_num(7,8,5)
-    new_board.insert_num(8,4,8)
-    new_board.insert_num(8,7,7)
-    new_board.insert_num(8,8,9)
+    unsolved_board =  [
+    [0, 8, 0, 0, 0, 7, 0, 0, 1],
+    [0, 0, 6, 0, 0, 3, 0, 0, 0],
+    [0, 9, 0, 6, 1, 0, 0, 2, 0],
+    [0, 0, 0, 0, 0, 6, 0, 0, 0],
+    [0, 0, 9, 4, 8, 0, 0, 0, 3],
+    [0, 2, 0, 0, 0, 0, 5, 0, 0],
+    [0, 0, 4, 1, 9, 0, 0, 0, 8],
+    [0, 0, 0, 0, 7, 0, 0, 0, 0],
+    [8, 0, 0, 0, 0, 0, 0, 3, 0]]
+    new_board.insert_unsolved_board(unsolved_board)
     print("unsolved sudoku: ")
     new_board.print_board()
 
